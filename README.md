@@ -1,5 +1,7 @@
 # LLM 文本编码工具（通用版）
 
+[![smoke-test](https://github.com/hemaryrun-oss/llm-text-coding-tool/actions/workflows/smoke.yml/badge.svg)](https://github.com/hemaryrun-oss/llm-text-coding-tool/actions/workflows/smoke.yml)
+
 > **English abstract** — A schema-driven toolkit for auditing LLM text annotation. It turns "coding texts with an LLM" from a one-off task into a reusable, auditable pipeline: `code.py` encodes documents against a structured coding manual, and `qa.py` audits the results for the two failure modes hand-sampling usually misses — **omission** (trigger terms present in the source but left untagged) and **template effects** (the model reusing one fixed answer across files while skipping the text). The auditor reports per-field **Cohen's Kappa** with automatic **κ-paradox** detection, plus a **template-effect sweep** that flags files whose coding fingerprints are identical despite different source text. The manual lives in `codebook.json`; switching domains means swapping the manual, not the scripts.
 
 把「用大模型给文本做编码/归类」这件事，做成一套**可复用、可质检**的流程。
