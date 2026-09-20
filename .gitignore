@@ -1,0 +1,12 @@
+config.json
+__pycache__/
+*.pyc
+.DS_Store
+*.bak
+*.corrupt
+sample_output/*
+!sample_output/.gitkeep
+!sample_output/编码结果.json
+!sample_output/编码结果.csv
+!sample_output/黄金标准.json
+!sample_output/质检报告.md
