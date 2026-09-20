@@ -119,6 +119,15 @@ python3 test_smoke.py
 
 这条结论也提醒：**编码相似必须和原文相似做对照**（原文不相似、编码却相似，才是套模板），不能只看编码一侧。
 
+## 方法论出处
+
+工具的几个核心设计都有方法论文献依据：
+
+- **Cohen's Kappa**：Cohen, J. (1960). A coefficient of agreement for nominal scales. *Educational and Psychological Measurement*, 20(1), 37–46.
+- **κ 悖论识别**（答案一边倒时 Kappa 被边际分布压低、改报一致率）：Feinstein, A. R., & Cicchetti, D. V. (1990). High agreement but low kappa: I. The problems of two paradoxes. *Journal of Clinical Epidemiology*, 43(6), 543–549.
+- **编码手册的「触发词 + 反例 + 边界规则」设计**：来自内容分析法对编码方案「可操作、可复现」的一贯要求。经典教材见 Krippendorff, K. (2018). *Content Analysis: An Introduction to Its Methodology* (4th ed.). Sage；Neuendorf, K. A. (2017). *The Content Analysis Guidebook* (2nd ed.). Sage.
+- **模板效应竖查**（比对编码指纹、找完全一致的文件）：这是本工具的**自创设计**，暂无现成文献出处。它源于一个实证观察——批量编码时 LLM 会跳读原文、复用同一套答案，而「编码完全一致」是这种偷懒最硬的信号。若用于正式研究，建议先做可证伪性检验：**编码相似必须与原文相似做对照**（原文不相似、编码却一致，才构成套模板证据）。
+
 ## License
 
 MIT
