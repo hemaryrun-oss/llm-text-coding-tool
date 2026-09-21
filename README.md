@@ -1,10 +1,16 @@
 # LLM 文本编码工具（通用版）
 
 [![smoke-test](https://github.com/hemaryrun-oss/llm-text-coding-tool/actions/workflows/smoke.yml/badge.svg)](https://github.com/hemaryrun-oss/llm-text-coding-tool/actions/workflows/smoke.yml)
+[![GitHub](https://img.shields.io/badge/GitHub-主仓库-181717?logo=github)](https://github.com/hemaryrun-oss/llm-text-coding-tool)
+[![Gitee](https://img.shields.io/badge/Gitee-国内镜像-C71D23?logo=gitee)](https://gitee.com/maryrun/llm-text-coding-tool)
+![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 > **English abstract** — A schema-driven toolkit for auditing LLM text annotation. It turns "coding texts with an LLM" from a one-off task into a reusable, auditable pipeline: `code.py` encodes documents against a structured coding manual, and `qa.py` audits the results for the two failure modes hand-sampling usually misses — **omission** (trigger terms present in the source but left untagged) and **template effects** (the model reusing one fixed answer across files while skipping the text). The auditor reports per-field **Cohen's Kappa** with automatic **κ-paradox** detection, plus a **template-effect sweep** that flags files whose coding fingerprints are identical despite different source text. The manual lives in `codebook.json`; switching domains means swapping the manual, not the scripts.
 
 把「用大模型给文本做编码/归类」这件事，做成一套**可复用、可质检**的流程。
+
+> 🪞 **国内访问**：GitHub 打不开或很慢时，可用 Gitee 镜像：https://gitee.com/maryrun/llm-text-coding-tool （与主仓库同步更新）。
 
 核心思路：**编码手册（`codebook.json`）与脚本分离**。换一个研究领域，只需要换掉 `codebook.json`（维度、取值、触发词、边界规则），`code.py` 和 `qa.py` 一行不用改。本仓库自带一份虚构的「招聘信息编码」手册作为演示，用来验证「换手册不改代码」。
 
